@@ -81,3 +81,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/osx,linux,windows,vagrant
+
+/Projects/*
+!/Projects/.gitkeep
