@@ -21,7 +21,8 @@ sudo apt-get -y install \
   libssl-dev openssl zlib1g-dev openssh-server net-tools wget curl \
   inetutils-ping inetutils-telnet inotify-tools mercurial gettext \
   libncurses5-dev libperl-dev python-dev python3-dev ruby-dev \
-  lua5.2 liblua5.2-dev luajit libluajit-5.1-dev libbz2-dev
+  lua5.2 liblua5.2-dev luajit libluajit-5.1-dev libbz2-dev \
+  libffi-dev libjpeg-dev libpng-dev libgif-dev libwebp-dev ffmpeg
 
 echo '### Install Docker ###'
 sudo apt-get install -y apt-transport-https ca-certificates gnupg-agent software-properties-common
@@ -57,6 +58,11 @@ sudo curl https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64
   -L -o /usr/local/src/exa-linux-x86_64-0.8.0.zip && \
   sudo unzip /usr/local/src/exa-linux-x86_64-0.8.0.zip -d /usr/local/src/ && \
   sudo mv /usr/local/src/exa-linux-x86_64 /usr/local/bin/exa
+
+echo '### Install fzf ###'
+sudo curl https://github.com/junegunn/fzf-bin/releases/download/0.17.5/fzf-0.17.5-linux_amd64.tgz \
+  -L -o /usr/local/src/fzf-0.17.5-linux_amd64.tgz && \
+  sudo tar xfvz /usr/local/src/fzf-0.17.5-linux_amd64.tgz -C /usr/local/bin
 
 #
 # setup account configs
