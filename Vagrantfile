@@ -20,6 +20,16 @@ Vagrant.configure("2") do |config|
   # Provision
   config.vm.provision :shell, privileged: false, path: "bootstrap.bash"
 
+  # for VirtualBox
+  config.vm.provider 'virtualbox' do |v|
+    # v.update_guest_tools = true
+
+    config.vm.network :private_network, ip: "192.168.33.30"
+    v.name = ENV['VM_NAME'] || 'workspace'
+    v.cpus = ENV['VM_CPUS'] || 2
+    v.memory = ENV['VM_MEMORY'] || 4096
+  end
+
   # for Parallels
   config.vm.provider 'parallels' do |v|
     # v.update_guest_tools = true
